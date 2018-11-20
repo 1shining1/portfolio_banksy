@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/fav.png" />
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <!-- <script src="js/jquery.nicescroll.js"></script> -->
+
+    <title>Banksy</title>
+  </head>
+
+  <body>
+    <div id="load">
+      <img src="images/banksy.png" alt="" id="load_img" /><br />
+      <button id="load_btn" onclick="fadeOut()">CLICK</button>
+    </div>
+
+    <div id="wrap">
+      <div class="scrollbar scrollbar-rare-wind">
+        <div class="force-overflow"></div>
+      </div>
+      <div class="prl">
+        <div
+          class="layer-bg layer"
+          data-depth="0.15"
+          data-type="parallax"
+        ></div>
+        <div class="layer-1 layer" data-depth="0.8" data-type="parallax"></div>
+        <div
+          class="layer-banksy layer"
+          data-depth="0.4"
+          data-type="parallax"
+        ></div>
+        <div class="layer-2 layer" data-depth="0.60" data-type="parallax"></div>
+      </div>
+      <div id="content">
+        <section class="section02">
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div
+                class="layer-3 layer"
+                data-depth="0.8"
+                data-type="parallax"
+              ></div>
+            </div>
+            <div class="col-lg-8 col-md-6">
+              <p class="sec02_p">
+                The anonymous graffiti artist known as Banksy is perhaps the
+                most controversial street artist of today. He is famous for his
+                stenciled graffiti works, which appear in public spaces around
+                the world. His use of stenciling developed from a need to
+                complete a work quickly, namely to avoid being caught
+                vandalizing by police. Banksy often uses multi-layered stencils
+                to employ multiple colors, and he frequently incorporates
+                permanent environmental fixtures, such as street signs and
+                architectural elements, into his work. Marked by dark humor,
+                satire, and political commentary, much of his street art has
+                become viral on the Internet. His most notable early work was
+                the result of a trip to Palestine and the West Bank, where he
+                stenciled nine images on the Bethlehem Wall <br /><br />
+                Despite his stealth presence, Banksy has become a mainstream
+                phenomenon. In 2010 Banksy directed Exit Through the Gift Shop,
+                a chronicle of the underground world of street art, which was
+                nominated for Best Documentary at the Oscars. In 2015, he opened
+                Dismaland Bemusement Park, a temporary exhibition of an
+                inverted, dystopian Disneyland. Although Banksy has continuously
+                emphasized an aversion to the art world through his output, he
+                also produces traditional works on canvas and prints as well as
+                branded merchandise such as t-shirts. His cultural significance,
+                widespread popularity, and, certainly, the mystery of his
+                identity have all contributed to the desirability of his art.
+                According to Sotheby’s Mei Moses, the average compound annual
+                return for Banksy is 8.5%, with 76.5% of works increasing in
+                value.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="section03">
+          <div class="container">
+            <div
+              class="layer-4 layer"
+              data-depth="1"
+              data-type="parallax"
+            ></div>
+          </div>
+        </section>
+
+        <section class="section04">
+          <div class="container">
+            <div
+              class="layer-5 layer"
+              data-depth="0.85"
+              data-type="parallax"
+            ></div>
+          </div>
+        </section>
+
+        <section class="section05">
+          <div class="container">
+            <div
+              class="layer-6 layer"
+              data-depth="0.9"
+              data-type="parallax"
+            ></div>
+          </div>
+        </section>
+
+        <section class="section06">
+          <div class="container">
+            <div
+              class="layer-7 layer"
+              data-depth="1.1"
+              data-type="parallax"
+            ></div>
+          </div>
+        </section>
+        <section class="section07">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div
+                  class="layer-8 layer"
+                  data-depth="0.9"
+                  data-type="parallax"
+                ></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <h1 class="sec07_h1">Banksy</h1>
+                  <p class="sec07_p">
+                    Send all questions, complaints and threats to <br /><span>
+                      <a href="https://www.instagram.com/banksy/?hl=en"
+                        ><img src="images/instagram.png" alt=""
+                      /></a>
+
+                      faq@banksy.co.uk.</span
+                    ><br />
+                    Banksy is NOT on Facebook, Twitter or represented by Steve
+                    Lazarides or any other commercial gallery.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="last-section">
+          <div class="layer-9 float"></div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+
+    <script>
+      $(function() {
+        var $window = $(window); //Window object
+
+        var scrollTime = 0.8; //Scroll time
+        var scrollDistance = 170; //Distance. Use smaller value for shorter scroll and greater value for longer scroll
+
+        $window.on("mousewheel DOMMouseScroll", function(event) {
+          event.preventDefault();
+
+          var delta =
+            event.originalEvent.wheelDelta / 120 ||
+            -event.originalEvent.detail / 3;
+          var scrollTop = $window.scrollTop();
+          var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+          TweenMax.to($window, scrollTime, {
+            scrollTo: { y: finalScroll, autoKill: true },
+            ease: Power1.easeOut, //For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+            autoKill: true,
+            overwrite: 5
+          });
+        });
+      });
+
+      $(function() {
+        $("#load_btn").click(function() {
+          $("#load").fadeOut();
+          $("#wrap").fadeIn();
+        });
+      });
+      // setTimeout(loading, 2000);
+      // $("body").niceScroll({
+      //     cursorcolor: "rgba(60,60,60,0.7)",
+      //     cursorwidth: "8px",
+      //     cursorborder: "none"
+      // });
+    </script>
+  </body>
+</html>
